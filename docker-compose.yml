@@ -1,0 +1,11 @@
+version: "3.5"
+
+services:
+  gds-compile-task:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    volumes:
+      - ./build:/app/build
+    command: >
+      ./gradlew :open-packaging:shadowCopy
