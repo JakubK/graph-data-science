@@ -199,6 +199,12 @@ To package the library you can run `./gradlew :open-packaging:shadowCopy`.
 This will create a bundled JAR called `open-gds-VERSION.jar` in the directory `build/distributions/`.
 To use the bundled JAR in Neo4j, place the JAR file in the `plugins` directory of your Neo4j database and restart the database.
 For further instructions, see our https://neo4j.com/docs/graph-data-science/current/installation/[documentation].
+Alternatively, you can use attached `docker-compose.yml` to build and start a container producing .jar file without having Java or any other dependency than Docker installed:
+```
+docker-compose build
+docker-compose up
+```
+Once the job is done and container gets terminated, `build/distributions` directory should be present with artifact jar.
 
 Preview of the documentation::
 A preview of the latest documentation can be found at https://neo4j.com/docs/graph-data-science/preview/.
